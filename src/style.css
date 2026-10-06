@@ -1,0 +1,11 @@
+@font-face {font-family: 'Barlow Condensed'; src: url('../public/fonts/barlow.ttf'); font-weight: 800;}
+@font-face {font-family: 'Inter'; src: url('../public/fonts/inter.ttf'); font-weight: 400;}
+@font-face {font-family: 'JetBrains Mono'; src: url('../public/fonts/mono.ttf'); font-weight: 400;}
+* {box-sizing: border-box;}
+.display {font-family: 'Barlow Condensed', sans-serif; font-weight: 800; letter-spacing: -.02em;}
+.mono, .eyebrow, .header, .footer {font-family: 'JetBrains Mono', monospace;}
+.texture {position: absolute; inset: 0; background-image: radial-gradient(#20211d20 .7px, transparent .7px); background-size: 7px 7px;}
+.header {position: absolute; top: 55px; left: 130px; right: 130px; height: 70px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #20211d; font-size: 17px; letter-spacing: 2px;}
+.header b {font-family: 'Inter', sans-serif; font-size: 38px; letter-spacing: -3px;}
+.footer {position: absolute; bottom: 48px; left: 130px; right: 130px; display: flex; justify-content: space-between; font-size: 15px; letter-spacing: 1px; color: #64645b;}
+.eyebrow {font-size: 21px; letter-spacing: 3px; color: #64645b; margin-bottom: 28px;}

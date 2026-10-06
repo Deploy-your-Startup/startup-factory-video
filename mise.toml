@@ -1,0 +1,14 @@
+[tools]
+node = "24.21.0"
+
+[tasks.dev]
+run = "./make.sh run"
+
+[tasks.render]
+run = "./make.sh render"
+
+[tasks.lint]
+run = "./make.sh lint"
+
+[tasks.poster]
+run = "./make.sh poster"
