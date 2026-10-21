@@ -38,6 +38,13 @@ for (const hz of [196, 246.94, 293.66]) add(484 / fps, 5.6, (t, p) => .03 * Math
 [392, 440, 493.88, 587.33, 659.25, 783.99].forEach((hz, i) => add((560 + i * 76 / 5) / fps, .7, tone(hz, .09, 6)));
 // Contributions land in the harness.
 for (let i = 0; i < 36; i++) add((676 + ((i * 37) % 64) + 26) / fps, .12, tone(1046.5 + (i % 3) * 261.6, .035, 30));
+// Rockets: one launches from the harness, one rises into the finale.
+const launch = (at, duration, gain) => {
+  whoosh(at, duration, gain);
+  add(at, duration, (t, p) => gain * 1.6 * Math.sin(2 * Math.PI * (60 + 140 * p) * t) * Math.sin(Math.PI * p));
+};
+launch(744 / fps, 1.1, .05);
+launch(800 / fps, .8, .035);
 // Finale chord.
 for (const hz of [130.81, 196, 261.63, 329.63, 392]) {
   add(784 / fps, 4, (t, p) => .05 * (Math.sin(2 * Math.PI * hz * t) + .15 * Math.sin(4 * Math.PI * hz * t)) * Math.min(1, t * 9) * Math.pow(1 - p, 1.6));

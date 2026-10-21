@@ -1,5 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, Audio, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {BrandMark, Rocket} from './Rocket';
 import './style.css';
 
 export const DURATION = 900;
@@ -128,8 +129,8 @@ const Turn = () => {
       <line x1={nodeX(0)} y1={nodeY} x2={Math.min(railEnd, split)} y2={nodeY} stroke={accent} strokeWidth={3} />
       {railEnd > split && <line x1={split} y1={nodeY} x2={railEnd} y2={nodeY} stroke={muted} strokeWidth={3} strokeDasharray="10 10" />}
       <path d={`M ${nodeX(5)} ${nodeY - 50} C ${nodeX(5)} 520, ${nodeX(0)} 520, ${nodeX(0)} ${nodeY - 50}`} fill="none" stroke={muted} strokeWidth={2} strokeDasharray="8 10" pathLength={1} strokeDashoffset={0} opacity={loop} />
-      {spark > 0 && spark < 1 && <circle cx={nodeX(0) + (nodeX(5) - nodeX(0)) * spark} cy={nodeY} r={11} fill={accent} />}
     </svg>
+    {spark > 0 && spark < 1 && <div style={{position: 'absolute', left: nodeX(0) + (nodeX(5) - nodeX(0)) * spark - 22, top: nodeY - 28, color: accent, zIndex: 2, filter: 'drop-shadow(0 0 10px #9cbedc88)', transform: 'rotate(90deg)'}}><Rocket size={44} flame={.6 + .4 * Math.sin(frame * 1.7)} /></div>}
     <div className="mono" style={{position: 'absolute', left: (nodeX(0) + nodeX(5)) / 2 - 150, top: 535, width: 300, textAlign: 'center', fontSize: 17, letterSpacing: 3, color: muted, opacity: loop}}>AND AGAIN</div>
     {stages.map((stage, i) => {
       const e = entry(526 + i * 6);
@@ -155,6 +156,7 @@ const OpenSource = () => {
   const frame = useCurrentFrame();
   const entry = useEntry();
   const landed = drops.filter((d) => frame >= d.at + 26).length / drops.length;
+  const launch = ramp(frame, 748, 776);
   return <AbsoluteFill style={{opacity: visible(frame, 660, 780)}}>
     <Headline at={664} eyebrow="06 / BUILT IN THE OPEN">Open source.<br/><span style={{color: accent}}>No lock-in.</span></Headline>
     <Sub at={684} top={690}>Your code. Your servers. Your keys.<br/>Leave anytime. Stay for the harness.</Sub>
@@ -165,6 +167,7 @@ const OpenSource = () => {
     })}
     <div className="mono" style={{position: 'absolute', left: 1000, top: 690, width: 790, height: 100, borderRadius: 12, border: `2px solid ${accent}`, background: `rgba(156, 190, 220, ${.06 + landed * .22})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 26, letterSpacing: 6, opacity: entry(668), boxShadow: `0 0 ${landed * 80}px rgba(156, 190, 220, .35)`}}>THE HARNESS</div>
     <div className="mono" style={{position: 'absolute', left: 1000, top: 820, width: 790, textAlign: 'center', fontSize: 18, color: muted, opacity: entry(690)}}>templates · agent instructions · checks · deployment</div>
+    <div style={{position: 'absolute', left: 1395 - 30, top: 690 - 82 - launch * launch * 520, color: accent, opacity: entry(734) * (1 - ramp(frame, 770, 778)), filter: 'drop-shadow(0 0 12px #9cbedc88)'}}><Rocket size={60} flame={launch > 0 ? .7 + .3 * Math.sin(frame * 2) : .15} /></div>
   </AbsoluteFill>;
 };
 
@@ -177,7 +180,7 @@ const Finale = () => {
       const e = entry(808 + i * 10);
       return <div key={label} className="cta" style={{position: 'absolute', left: 130, top: 680 + i * 120, width: 1000, opacity: e, transform: `translateY(${(1 - e) * 20}px)`}}><span>{label}</span>{target}<b style={{marginLeft: 'auto', color: accent}}>↗</b></div>;
     })}
-    <div style={{position: 'absolute', left: 1560 - 150, top: 560 - 150, width: 300, height: 300, borderRadius: '50%', border: `3px solid ${accent}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: accent, fontSize: 110, opacity: entry(796), transform: `scale(${.8 + .2 * entry(796)})`}}>▲</div>
+    <div style={{position: 'absolute', left: 1560 - 150, top: 560 - 150, width: 300, height: 300, borderRadius: '50%', border: `3px solid ${accent}`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: accent, opacity: entry(796), transform: `scale(${.8 + .2 * entry(796)})`}}><div style={{transform: `translateY(${(1 - entry(800)) * 220 + Math.sin(frame / 9) * 6}px) rotate(35deg)`}}><Rocket size={150} flame={.55 + .3 * Math.sin(frame * 1.3) + .5 * (1 - entry(800))} /></div></div>
     <div style={{position: 'absolute', left: 1560 - 190, top: 560 - 190, width: 380, height: 380, borderRadius: '50%', border: `1px dashed ${line}`, opacity: entry(800), transform: `rotate(${frame * .6}deg)`}} />
   </AbsoluteFill>;
 };
@@ -187,7 +190,7 @@ export const Teaser = () => {
   return <AbsoluteFill style={{background: bg, color: text, fontFamily: 'Inter', overflow: 'hidden'}}>
     <Audio src={staticFile('teaser.wav')} />
     <div className="grid" />
-    <div className="header"><div className="logo"><small>deploy your</small><b>startup</b></div><span>THE STARTUP FACTORY</span><span><span style={{color: accent}}>●</span> OPEN SOURCE · EARLY ACCESS</span></div>
+    <div className="header"><div style={{display: 'flex', alignItems: 'center', gap: 16, color: accent}}><BrandMark size={50} /><div className="logo"><small>deploy your</small><b>startup</b></div></div><span>THE STARTUP FACTORY</span><span><span style={{color: accent}}>●</span> OPEN SOURCE · EARLY ACCESS</span></div>
     <Ideas />
     <Setup />
     <AfterLaunch />

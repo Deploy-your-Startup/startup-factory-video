@@ -29,6 +29,8 @@ Preview at http://localhost:3100. Export the video with `mise run render`; the M
 | 660–780 | Open source, no lock-in, the shared harness |
 | 780–900 | Ideas in. Startups out. |
 
+The rocket and brand mark in `src/Rocket.tsx` copy the website components; keep them in sync.
+
 ## License
 
 The code in this repository is MIT licensed. Remotion is not: it is free for individuals and small companies, larger companies need a company license. Read the [Remotion license](https://www.remotion.dev/license) before you build on this repository. Fonts use the SIL Open Font License; licenses are next to the fonts.
