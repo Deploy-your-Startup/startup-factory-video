@@ -1,6 +1,6 @@
 # Startup Factory Video
 
-A 30-second teaser for Deploy Your Startup, made with React, TypeScript and Remotion: the problem (no time, setup detours, endless upkeep), the idea (AI does the work, people decide where it matters), open source without lock-in, and a call to start a startup or help build the factory. 1920 × 1080, 30 fps, original synthesized sound and locally bundled fonts.
+A 30-second teaser for Deploy Your Startup, made with React, TypeScript and Remotion: the problem (no time, setup detours, endless upkeep), the idea (AI does the work, people decide where it matters), open source without lock-in, and a call to start a startup or help build the factory. 1920 × 1080, 30 fps, original synthesized music and sound and locally bundled fonts.
 
 In the lifecycle scene, solid stages are available in early access; dashed stages are the direction we are building together, not current features.
 
@@ -18,7 +18,7 @@ Preview at http://localhost:3100. Export the video with `mise run render`; the M
 
 ## Edit
 
-`src/Teaser.tsx` owns the animation, one component per scene; `src/Root.tsx` registers the composition. All motion is frame-based and deterministic. `scripts/sound.mjs` generates `public/teaser.wav` from the same frame numbers; run `mise exec -- node scripts/sound.mjs` after moving a cue.
+`src/Teaser.tsx` owns the animation, one component per scene; `src/Root.tsx` registers the composition. All motion is frame-based and deterministic. `scripts/sound.mjs` generates `public/teaser.wav`, music and effects, from the same frame numbers; run `mise exec -- node scripts/sound.mjs` after moving a cue.
 
 | Frames | Scene |
 |---|---|
