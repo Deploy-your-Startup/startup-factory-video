@@ -3,7 +3,7 @@
 This independent repository owns Remotion videos for Deploy Your Startup.
 
 - Run commands through `mise exec -- ./make.sh <verb>`.
-- `make.sh lint` checks without writing; render exports to ignored `out/`.
+- `make.sh format` writes Prettier fixes; `make.sh lint` checks formatting and types without writing; render exports to ignored `out/`.
 - Animate from `useCurrentFrame()`. Do not use wall-clock time, random values, CSS animations or network requests while rendering.
 - Keep fonts and audio local under `public/`; commit source assets.
 - Before changing product copy, read https://deploy-your-startup.com and https://deploy-your-startup.com/get-started and compare with website source. Unpublished designs are not public features.

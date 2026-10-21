@@ -12,7 +12,7 @@ mise exec -- ./make.sh install
 mise run dev
 ```
 
-Preview at http://localhost:3100. Export the video with `mise run render`; the MP4 is written to `out/startup-factory-intro.mp4`. Use `mise run poster` for a still and `mise run lint` for the TypeScript check.
+Preview at http://localhost:3100. Export the video with `mise run render`; the MP4 is written to `out/startup-factory-intro.mp4`. Use `mise run poster` for a still and `mise run lint` for the formatting and TypeScript check (`mise run format` fixes formatting).
 
 ## Edit
 

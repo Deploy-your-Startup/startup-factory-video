@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "remotion studio src/index.ts",
     "render": "remotion render src/index.ts Intro out/startup-factory-intro.mp4 --codec h264 --crf 18",
-    "lint": "tsc --noEmit",
-    "still": "remotion still src/index.ts Intro out/poster.png --frame 300"
+    "lint": "prettier --check \"src/**/*.{ts,tsx}\" \"scripts/**/*.mjs\" package.json tsconfig.json && tsc --noEmit",
+    "still": "remotion still src/index.ts Intro out/poster.png --frame 300",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\" \"scripts/**/*.mjs\" package.json tsconfig.json"
   },
   "dependencies": {
     "@remotion/cli": "4.0.533",
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "prettier": "^3.9.6",
     "typescript": "5.9.3"
   }
 }

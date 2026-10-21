@@ -5,7 +5,8 @@ case "${1:-run}" in
   install) npm ci ;;
   run) npm run dev -- --port 3100 ;;
   render) npm run render ;;
+  format) npm run format ;;
   lint) npm run lint ;;
   poster) npm run still ;;
-  *) echo "Usage: ./make.sh {install|run|render|lint|poster}" >&2; exit 1 ;;
+  *) echo "Usage: ./make.sh {install|run|render|format|lint|poster}" >&2; exit 1 ;;
 esac

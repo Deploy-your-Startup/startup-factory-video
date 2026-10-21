@@ -7,6 +7,9 @@ run = "./make.sh run"
 [tasks.render]
 run = "./make.sh render"
 
+[tasks.format]
+run = "./make.sh format"
+
 [tasks.lint]
 run = "./make.sh lint"
 
