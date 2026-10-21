@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts Intro out/startup-factory-intro.mp4 --codec h264 --crf 18",
+    "render": "remotion render src/index.ts Teaser out/startup-factory-teaser.mp4 --codec h264 --crf 18",
     "lint": "prettier --check \"src/**/*.{ts,tsx}\" \"scripts/**/*.mjs\" package.json tsconfig.json && tsc --noEmit",
-    "still": "remotion still src/index.ts Intro out/poster.png --frame 300",
+    "still": "remotion still src/index.ts Teaser out/poster.png --frame 860",
     "format": "prettier --write \"src/**/*.{ts,tsx}\" \"scripts/**/*.mjs\" package.json tsconfig.json"
   },
   "dependencies": {

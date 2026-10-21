@@ -1,11 +1,19 @@
-@font-face {font-family: 'Barlow Condensed'; src: url('../public/fonts/barlow.ttf'); font-weight: 800;}
 @font-face {font-family: 'Inter'; src: url('../public/fonts/inter.ttf'); font-weight: 400;}
+@font-face {font-family: 'Inter'; src: url('../public/fonts/inter-600.woff2'); font-weight: 600;}
+@font-face {font-family: 'Inter'; src: url('../public/fonts/inter-800.woff2'); font-weight: 800;}
 @font-face {font-family: 'JetBrains Mono'; src: url('../public/fonts/mono.ttf'); font-weight: 400;}
 * {box-sizing: border-box;}
-.display {font-family: 'Barlow Condensed', sans-serif; font-weight: 800; letter-spacing: -.02em;}
-.mono, .eyebrow, .header, .footer {font-family: 'JetBrains Mono', monospace;}
-.texture {position: absolute; inset: 0; background-image: radial-gradient(#20211d20 .7px, transparent .7px); background-size: 7px 7px;}
-.header {position: absolute; top: 55px; left: 130px; right: 130px; height: 70px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #20211d; font-size: 17px; letter-spacing: 2px;}
-.header b {font-family: 'Inter', sans-serif; font-size: 38px; letter-spacing: -3px;}
-.footer {position: absolute; bottom: 48px; left: 130px; right: 130px; display: flex; justify-content: space-between; font-size: 15px; letter-spacing: 1px; color: #64645b;}
-.eyebrow {font-size: 21px; letter-spacing: 3px; color: #64645b; margin-bottom: 28px;}
+.headline {font-weight: 800; letter-spacing: -.055em; line-height: 1.04;}
+.mono, .eyebrow, .header, .chip, .note, .cta {font-family: 'JetBrains Mono', monospace;}
+.grid {position: absolute; inset: 0; background-image: linear-gradient(#ffffff07 1px, transparent 1px), linear-gradient(90deg, #ffffff07 1px, transparent 1px); background-size: 96px 96px;}
+.header {position: absolute; top: 52px; left: 130px; right: 130px; height: 84px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #343639; font-size: 16px; letter-spacing: 3px; color: #9a9b9e;}
+.logo {font-family: 'Inter', sans-serif; letter-spacing: 0; color: #e7e7e4; line-height: 1;}
+.logo small {display: block; font-size: 15px; color: #9a9b9e; margin-bottom: 3px;}
+.logo b {font-size: 30px; font-weight: 800; letter-spacing: -.04em;}
+.eyebrow {font-size: 20px; letter-spacing: 4px; color: #9a9b9e; margin-bottom: 30px;}
+.note {position: absolute; width: 600px; padding: 30px 34px; background: #1f2124; border: 1px solid #41454a; border-radius: 12px; font-size: 27px; color: #e7e7e4; box-shadow: 0 30px 60px #00000055;}
+.note span {display: block; font-size: 15px; letter-spacing: 3px; color: #9a9b9e; margin-bottom: 14px;}
+.stamp {position: absolute; right: 26px; top: 20px; padding: 6px 14px; border: 3px solid #9cbedc; border-radius: 6px; color: #9cbedc; font-size: 21px; letter-spacing: 4px;}
+.chip {position: absolute; padding: 16px 26px; background: #1f2124; border: 1px solid #41454a; border-radius: 999px; font-size: 26px; color: #e7e7e4; white-space: nowrap;}
+.cta {display: flex; align-items: center; padding: 26px 32px; border: 1px solid #41454a; border-radius: 12px; background: #141517; font-size: 30px; color: #e7e7e4;}
+.cta span {font-size: 16px; letter-spacing: 3px; color: #9a9b9e; width: 330px;}
