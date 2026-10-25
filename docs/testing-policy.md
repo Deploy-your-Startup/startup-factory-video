@@ -26,6 +26,13 @@ Record uncovered flows in project documentation or issues and extend coverage as
 those flows are changed. Keep optional provider checks explicit and record the
 credentials or environment they require without storing secrets.
 
+Local or CI browser verification follows [the shared testing decision](https://github.com/Deploy-your-Startup/deploy-template/blob/main/docs/adr/0005-local-or-ci-e2e.md).
+The explicit local mode requires a recorded complete applicable E2E run of the
+final committed source before approval. CI must distinguish omitted browser
+checks from CI passes; it does not verify local execution. The mode is available
+after adopting a compatible shared workflow revision. Keep scenario matrices
+focused on distinct behaviour and consolidate duplicate browser checks.
+
 ## CI and release evidence
 
 A green pipeline means the enabled checks passed. It does not prove complete
@@ -33,7 +40,8 @@ coverage of every feature. Report executed, failed and skipped checks separately
 a skipped provider scenario is unverified, not a pass. State remaining gaps when
 reporting completion. Local checks alone do not prove a production deployment.
 
-Preserve E2E as a deployment gate where the project deploys an application.
+Preserve E2E verification before application release, using the selected local
+or CI execution mode.
 Every enabled shard must succeed before publishing or deployment. Use isolated
 data for each shard, retain reports and failure logs, and clean up disposable
 resources. Improve speed through caching and independent parallel checks rather

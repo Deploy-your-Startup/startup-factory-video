@@ -20,4 +20,4 @@ Unit tests are reserved for complex algorithms and never replace these checks.
 Use GIVEN / WHEN / THEN, real application interfaces and independent fixtures.
 A green pipeline confirms the executed checks, not complete feature coverage.
 Record uncovered flows and report skipped provider checks and remaining gaps.
-Keep required E2E checks enabled when improving speed.
+Keep E2E verification required; select local or CI execution through the testing policy.
