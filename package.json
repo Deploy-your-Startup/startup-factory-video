@@ -10,10 +10,10 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\" \"scripts/**/*.mjs\" package.json tsconfig.json"
   },
   "dependencies": {
-    "@remotion/cli": "4.0.533",
+    "@remotion/cli": "4.0.544",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "remotion": "4.0.533"
+    "remotion": "4.0.544"
   },
   "devDependencies": {
     "@types/react": "19.2.2",
